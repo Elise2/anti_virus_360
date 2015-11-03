@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.administrator.anti_virus_360" >
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <!--清理手机缓存-->
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+        </activity>
+        <service
+            android:name="service.ManagerService"
+            android:enabled="true"
+            android:exported="true"></service>
+        <activity android:name=".StopInfo"></activity>
+        <activity android:name=".Telephony"></activity>
+        <activity android:name=".ProgressActivity"></activity>
+        <activity android:name=".ProgressActivity1"></activity>
+        <activity android:name=".ClearMoreActivity"></activity>
+        <activity android:name=".StopPhoneActivity"></activity>
+        <activity android:name=".StopMainActivity"></activity>
+        <activity android:name=".FlowMangerActivity"></activity>
+        <activity android:name=".BlackListActivity"></activity>
+        <activity android:name=".StopActivity"></activity>
+        <activity android:name=".SoftManagerActivity"/>
+        <activity android:name=".Clean_rubbish"/>
+        <service android:name="service.DataService">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+        </service>
+        <!-- 监听短信 -->
+        <receiver android:name="receiver.SMSReceiver">
+            <intent-filter android:priority="2000">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="receiver.PhoneReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="receiver.PhoneStartChangedReceiver"/>
+    </application>
+
+</manifest>

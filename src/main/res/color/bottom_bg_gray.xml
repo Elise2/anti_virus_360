@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/bottom_bg_gray" android:state_checkable="true">#ff8a968b</item>
+</selector>

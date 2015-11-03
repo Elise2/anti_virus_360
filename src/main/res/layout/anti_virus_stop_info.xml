@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout
+    android:id="@+id/stopTitle"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="#ff26ab06"
+    android:orientation="horizontal">
+    <TextView
+            android:id="@+id/stopInfo"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="短信拦截"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/stopHistory"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="来电记录"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/stopTitle"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/stopInfolistView"></ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/clearall"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_style"
+            android:text="一键清空"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:text="举报更多短信"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_style"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+</RelativeLayout>
